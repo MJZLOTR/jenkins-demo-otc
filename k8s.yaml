@@ -13,8 +13,8 @@ spec:
         app: jenkins-demo
     spec:
       containers:
-      - image: swr.eu-de.otc.t-systems.com/mjztest/jenkins-demo:97047cd
-        imagePullPolicy: IfNotPresent
+      - image: $REGISTRY/$IMAGE:$IMAGE_TAG
+        imagePullPolicy: Always
         name: jenkins-demo
         env:
         - name: branch
