@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: jenkins-demo
-  namespace: default
+  namespace: dev
 spec:
   selector:
     matchLabels:
@@ -15,6 +15,7 @@ spec:
       containers:
       - image: swr.cn-east-3.myhuaweicloud.com/batch/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
+        namespace: dev
         command:
           - sleep
         args:
