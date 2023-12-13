@@ -13,8 +13,12 @@ spec:
         app: jenkins-demo
     spec:
       containers:
-      - image: $REGISTRY/$IMAGE:$IMAGE_TAG
+      - image: swr.eu-de.otc.t-systems.com/mjztest/jenkins-demo:latest
         imagePullPolicy: Always
+        command:
+          - sleep
+        args:
+          - '1000'
         name: jenkins-demo
         env:
         - name: branch
